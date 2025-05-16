@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../css/bootstrap.css">
+    <script src="../../../js/bootstrap.bundle.js"></script>
+    <title>Users</title>
+    <style>
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .user-list {
+            margin-bottom: 2rem;
+        }
+
+        .user-card {
+            padding: 8px 12px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Users</h1>
+
+    <div id="users-container">
+        <div class="user-list" id="normal_user">
+            <h2>Normal Users</h2>
+            <div class="users"></div>
+        </div>
+
+        <div class="user-list" id="journalist">
+            <h2>Journalists</h2>
+            <div class="users"></div>
+        </div>
+
+        <div class="user-list" id="team">
+            <h2>Teams</h2>
+            <div class="users"></div>
+        </div>
+    </div>
+
+    <!-- Ensure the script path is correct -->
+    <script type="module" src="./users.js"></script>
+    <script>
+        console.log("HTML loaded. If you don't see logs from users.js, check the script path.");
+    </script>
+</body>
+
+</html>
