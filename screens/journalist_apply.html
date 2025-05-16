@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Journalists | LB_Sports</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            padding: 60px 15px;
+            flex: 1;
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #198754;
+            margin-bottom: 30px;
+        }
+
+        .form-section {
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-title {
+            color: #198754;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            background-color: #198754;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .btn-custom:hover {
+            background-color: #157347;
+        }
+
+        .feature-card {
+            border-left: 5px solid #198754;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        footer {
+            background-color: #198754;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../imgs/lib1.png" alt="LB_Sports Logo" style="width: 40px;" class="rounded-pill" />
+                LB_Sports
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-dark btn-download mx-2">Login</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="text-center mb-5">
+            <h1 class="section-heading">Welcome Journalists!</h1>
+            <p class="lead">Become part of our sports media community. As a journalist at LB_Sports, you can:</p>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <div class="card h-100 p-4 text-center feature-card">
+                    <h5 class="card-title">Publish news and match coverage</h5>
+                    <p class="card-text">Real-time updates and notifications for every major Lebanese football match.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 p-4 text-center feature-card">
+                    <h5 class="card-title">View exclusive match data and statistics</h5>
+                    <p class="card-text">Dive into comprehensive insights, player metrics, and real-time analytics
+                        tailored for sports journalism.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-4">
+                <div class="card h-100 p-4 text-center feature-card">
+                    <h5 class="card-title">Personal Journalist Dashboard</h5>
+                    <p class="card-text">Track your submitted articles, interviews, and coverage statistics all in one
+                        place.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-4">
+                <div class="card h-100 p-4 text-center feature-card">
+                    <h5 class="card-title">Media Upload Tools</h5>
+                    <p class="card-text">Upload photos, videos, and match highlights directly to the platform for
+                        publishing.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-section">
+                    <h4 class="form-title">Request Access</h4>
+                    <form id="applyform">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="officialaccount" class="form-label">Official Account (Facebook,
+                                Instagram...)</label>
+                            <input type="text" class="form-control" id="officialaccount" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Tell us why you want to join</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom w-100">Apply Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <small>&copy; 2025 LB_Sports. All rights reserved.</small>
+    </footer>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script type="module" src="../main.js"></script>
+</body>
+
+</html>

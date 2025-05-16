@@ -1,18 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <title>Document</title>
+    <title>LB_Sports - Your Lebanese Sports Hub</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1200x500') center/cover no-repeat;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .features .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .btn-download {
+            min-width: 150px;
+        }
+
+        footer {
+            background-color: #0f5132;
+        }
+    </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
         <div class="container-fluid">
-            <a href="" class="navbar-brand">
-                <img src="imgs/lib1.png" alt="logo" style="width: 40px;" class="rounded-pill">
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="imgs/lib1.png" alt="Lb_Sports_Logo" style="width: 40px;" class="rounded-pill" />
+                LB_Sports
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="screens/journalist_apply.html">For Journalists</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li><button type="button" class="btn btn-primary w-100" id="Loginbtn">Login</button></li>
+                </ul>
+            </div>
         </div>
     </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Experience Lebanese Football Like Never Before</h1>
+            <p class="lead">Stay updated with live scores, detailed schedules, and exclusive news from the world of
+                Lebanese sports.</p>
+            <a href="#download" class="btn btn-outline-light btn-lg mt-3">Download Now</a>
+        </div>
+    </header>
+
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Why Choose LB_Sports?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 text-center">
+                        <h5 class="card-title">Live Scores</h5>
+                        <p class="card-text">Real-time updates and notifications for every major Lebanese football
+                            match.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 text-center">
+                        <h5 class="card-title">Match Schedules</h5>
+                        <p class="card-text">Comprehensive league fixtures to help fans and journalists plan ahead with
+                            confidence.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 text-center">
+                        <h5 class="card-title">Journalist Portal</h5>
+                        <p class="card-text">Media professionals can register for special access to analytics, reports,
+                            and exclusive content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="py-5 text-center">
+        <div class="container">
+            <h2 class="section-title">Get the App</h2>
+            <p class="mb-4">LB_Sports will be available soon on your favorite platform.</p>
+            <a href="#" class="btn btn-dark btn-download mx-2"><img src="imgs/google-play.png" alt=""
+                    style="width: 30px;"> Google Play</a>
+            <a href="#" class="btn btn-secondary btn-download mx-2"><img src="imgs/app-store.png" alt=""
+                    style="width: 30px;"> App Store</a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-light">
+        <div class="container text-center">
+            <h3 class="section-title">Contact Us</h3>
+            <p class="mb-1">Email: <a href="mailto:husseinnajdi32@gmail.com">contact@lbsports.com</a></p>
+            <p>Follow us on Instagram: <a href="https://instagram.com" target="_blank">@lb_sports</a></p>
+        </div>
+    </section>
+
+    <footer class="text-white text-center py-3">
+        <small>&copy; 2025 LB_Sports. All rights reserved.</small>
+    </footer>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script>
+        document.getElementById('Loginbtn').addEventListener('click',function(){
+            window.location.href = 'screens/login_page.html';
+        })
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            window.scrollTo(0, 0);
+        });
+    </script>
 </body>
+
 </html>
