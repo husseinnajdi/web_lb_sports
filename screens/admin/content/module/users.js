@@ -1,14 +1,15 @@
 console.log("users.js loaded successfully!");
 
-import { db } from "../../../main.js";
+import { db } from "../../../../config.js";
 import {
   collection,
   getDocs,updateDoc, doc
 } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
 
 
-async function fetchAndShowUsers() {
-  console.log("Fetching users...");
+export async function loadUsers() {
+  console.log("users.js loaded successfully!");
+
   const usersCollection = collection(db, "User");
   const querySnapshot = await getDocs(usersCollection);
   const users = [];
@@ -16,10 +17,10 @@ async function fetchAndShowUsers() {
   querySnapshot.forEach((doc) => {
     const data = doc.data();
     users.push({
-        id: doc.id,
+      id: doc.id,
       name: data.name,
       email: data.email || "N/A",
-      isActive: data.isactive !== undefined ? data.isactive : false,
+      isactive: data.isactive ,
       createdAt: data["created-at"]
         ? new Date(data["created-at"].seconds * 1000).toLocaleDateString()
         : "N/A",
@@ -31,8 +32,10 @@ async function fetchAndShowUsers() {
   showUsersByRole(users);
 }
 
+
+
 function showUsersByRole(users) {
-  const roles = ["normal_user", "journalist", "team"];
+  const roles = ["admin","normal_user", "journalist", "team"];
   roles.forEach((role) => {
     const container = document.querySelector(`#${role} .users`);
     if (!container) {
@@ -61,9 +64,9 @@ function showUsersByRole(users) {
                 ${u.role === "normal_user" 
                   ? `<td>this is normal_user</td>` 
                   : `<td>
-                      ${u.isActive ? "Active" : "Inactive"}
-                      <button class="btn btn-sm btn-${u.isActive ? "danger" : "success"} toggle-status-btn" data-id="${u.id}" data-status="${u.isActive}">
-                        ${u.isActive ? "Deactivate" : "Activate"}
+                      ${u.isactive ? "Active" : "Inactive"}
+                      <button class="btn btn-sm btn-${u.isactive ? "danger" : "success"} toggle-status-btn" data-id="${u.id}" data-status="${u.isactive}">
+                        ${u.isactive ? "Deactivate" : "Activate"}
                       </button>
                     </td>`}
               </tr>`
@@ -87,7 +90,7 @@ function showUsersByRole(users) {
             isactive: !currentStatus,
           });
           alert(`User has been ${!currentStatus ? "activated" : "deactivated"}.`);
-          fetchAndShowUsers();
+          loadUsers(); 
         }catch (error) {
           console.error("Error updating user status:", error);
           alert("Failed to update user status.");
@@ -98,4 +101,4 @@ function showUsersByRole(users) {
   });
 }
   
-fetchAndShowUsers();
+loadUsers();

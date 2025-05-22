@@ -1,4 +1,5 @@
 import { db } from "./config.js";
+import { nameRegex,emailRegex,passwordRegex } from "./services/validation.js";
 import {collection,addDoc,query, where, getDocs} from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
 import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,} from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
 
@@ -86,21 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Unknown user role.");
     }
         } catch (error) {
+            alert("Login failed. Please check your credentials.");
         console.error("Error signing in:", error);
         }
     });
-    }
-
-    function nameRegex(name) {
-    return /^[A-Za-z\s]+$/.test(name);
-    }
-
-    function emailRegex(email) {
-    return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
-    }
-
-    function passwordRegex(password) {
-    return /^(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/.test(password);
     }
 });
 

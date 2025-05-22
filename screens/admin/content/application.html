@@ -1,11 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../css/bootstrap.css">
+    <script src="../../../js/bootstrap.bundle.js"></script>
+    <title>Users</title>
+    <style>
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .user-list {
+            margin-bottom: 2rem;
+        }
+
+        .user-card {
+            padding: 8px 12px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>apply</h1>
+    <h1>Applications</h1>
+
+    <div id="users-container">
+        <div class="user-list" id="pending">
+            <h2>Pending Applications</h2>
+            <div class="users"></div>
+        </div>
+
+        <div class="user-list" id="approved">
+            <h2>Approved Applications</h2>
+            <div class="users"></div>
+        </div>
+
+        <div class="user-list" id="rejected">
+            <h2>Rejected Applications</h2>
+            <div class="users"></div>
+        </div>
+    </div>
+<script> console.log("HTML file loaded.");</script>
+    <script type="module" src="./module/application.js"></script>
 </body>
+
 </html>
